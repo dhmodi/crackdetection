@@ -79,7 +79,7 @@ for i in range(0,len(filenames)):
                                           coords=coords,
                                           normalize_coords=normalize_coords)
 
-    model.load_weights('./ssd7_custom_weights.h5')
+    model.load_weights('./crack_detection_1_weights.h5')
 
 
     #model = load_model('ssd7_custom.h5')
@@ -112,7 +112,7 @@ for i in range(0,len(filenames)):
 
     # Draw the predicted boxes in blue
     for box in y_pred_decoded[i]:
-        if (box[1] >= 0.60):
+        if (box[1] >= 0.65):
             label = 'Predicted - {}: {:.2f}'.format(classes[int(box[0])], box[1])
             current_axis.add_patch(plt.Rectangle((box[2], box[4]), box[3]-box[2], box[5]-box[4], color='blue', fill=False, linewidth=2))
             current_axis.text(box[2], box[4], label, size='x-large', color='white', bbox={'facecolor':'blue', 'alpha':1.0})

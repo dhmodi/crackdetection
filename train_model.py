@@ -179,7 +179,7 @@ history = model.fit_generator(generator = train_generator,
                               validation_data = val_generator,
                               validation_steps = ceil(n_val_samples/batch_size))
 
-model_name = 'ssd7_custom'
+model_name = 'crack_detection_1'
 model.save('./{}.h5'.format(model_name))
 model.save_weights('./{}_weights.h5'.format(model_name))
 
